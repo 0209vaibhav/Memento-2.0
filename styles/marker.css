@@ -1,0 +1,71 @@
+/* ========== MARKER STYLES ========== */
+
+  /* --- Live Location Marker Styles --- */
+  .live-location-marker {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    z-index: 1000; /* Ensure live location is always on top */
+  }
+  
+  .location-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #000000;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    z-index: 1001; /* Higher than the marker container */
+  }
+  
+  .location-pulse {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    animation: pulse 2s ease-out infinite;
+    z-index: 999; /* Just below the dot but above other markers */
+  }
+  
+  .location-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border-top-color: #000000;
+    z-index: 1001; /* Same as dot to ensure visibility */
+  }
+  
+  /* --- Pulse Animation --- */
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+  }
+  
+  /* Add forced-colors media query to replace deprecated -ms-high-contrast */
+  @media (forced-colors: active) {
+    .mapboxgl-ctrl button {
+      forced-color-adjust: none;
+    }
+    
+    .mapboxgl-ctrl-icon {
+      forced-color-adjust: none;
+    }
+  }
+
+

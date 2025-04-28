@@ -1,0 +1,196 @@
+/* ========== MEMENTO DETAILS STYLES ========== */
+
+.details-actions-container {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.memento-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.memento-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Memento Text Elements */
+.memento-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.memento-name i {
+  color: #000000;
+  font-size: 1.1rem;
+}
+
+.memento-caption {
+  font-size: 1rem;
+  color: #4B5563;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.memento-caption i {
+  color: #000000;
+  margin-top: 4px;
+}
+
+.memento-description {
+  font-size: 0.95rem;
+  color: #6B7280;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.6;
+}
+
+.memento-description i {
+  color: #000000;
+  margin-top: 4px;
+}
+
+/* Memento Metadata Elements */
+.memento-location {
+  font-size: 0.95rem;
+  color: #4B5563;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.memento-location i {
+  color: #000000;
+}
+
+.memento-timestamp {
+  font-size: 0.9rem;
+  color: #6B7280;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.memento-timestamp i {
+  color: #000000;
+}
+
+.memento-category {
+  font-size: 0.95rem;
+  color: #4B5563;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background-color: #F3F4F6;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.memento-category::before {
+  margin-right: 4px;
+  font-family: inherit;
+}
+
+/* Category Symbols */
+.memento-category[value="social"]::before { content: "👥"; }
+.memento-category[value="urban-nature"]::before { content: "🌿"; }
+.memento-category[value="sky-weather"]::before { content: "🌈"; }
+.memento-category[value="cultural"]::before { content: "🎭"; }
+.memento-category[value="street-food"]::before { content: "🍴"; }
+.memento-category[value="unpleasant"]::before { content: "⚠️"; }
+.memento-category[value="folklore"]::before { content: "💡"; }
+.memento-category[value="architecture"]::before { content: "🏛️"; }
+.memento-category[value="mood-music"]::before { content: "🎧"; }
+.memento-category[value="creature"]::before { content: "🐾"; }
+.memento-category[value="sport"]::before { content: "⚽"; }
+.memento-category[value="poetic"]::before { content: "✍️"; }
+.memento-category[value="transition"]::before { content: "🏗️"; }
+.memento-category[value="public-event"]::before { content: "👥"; }
+.memento-category[value="other"]::before { content: "🗂️"; }
+
+/* Tag Symbols */
+.tag[value="ephemeral"]::before { content: "🌀"; }
+.tag[value="unmapped"]::before { content: "📍"; }
+.tag[value="niche"]::before { content: "🧬"; }
+.tag[value="emotional"]::before { content: "💫"; }
+.tag[value="hidden"]::before { content: "🕵️"; }
+.tag[value="unexpected"]::before { content: "🎭"; }
+.tag[value="reflective"]::before { content: "🪞"; }
+.tag[value="unpleasant"]::before { content: "💔"; }
+.tag[value="rare"]::before { content: "⏳"; }
+
+/* Author Section */
+.memento-author {
+  font-size: 0.9rem;
+  color: #6B7280;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.memento-author i {
+  color: #000000;
+}
+
+.memento-duration {
+  font-size: 0.95rem;
+  color: #4B5563;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.memento-duration::before {
+  margin-right: 4px;
+  font-family: inherit;
+}
+
+/* Duration Symbols */
+.memento-duration[value="less-than-15min"]::before { content: "⚡"; }
+.memento-duration[value="15min-1hr"]::before { content: "⏱️"; }
+.memento-duration[value="1-2hrs"]::before { content: "⏰"; }
+.memento-duration[value="2-6hrs"]::before { content: "🕐"; }
+.memento-duration[value="6-12hrs"]::before { content: "🕑"; }
+.memento-duration[value="12-24hrs"]::before { content: "🕒"; }
+.memento-duration[value="eternal"]::before { content: "♾️"; }
+
+/* Remove Font Awesome font-family for emoji content */
+.tag[value]::before,
+.memento-category[value]::before,
+.memento-duration[value]::before {
+  font-family: inherit;
+}
+
+
+.category-symbol::before,
+.tag-symbol::before {
+  content: attr(data-symbol);
+} 

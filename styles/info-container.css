@@ -1,0 +1,62 @@
+/* ========== INFO CONTAINER STYLES ========== */
+
+  /* Info Container Styles */
+  .info-container {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    position: absolute;
+    top: 125px;
+    left: 0px;
+    right: 0px;
+    bottom: 75px;
+    background: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 900;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+
+  .info-container.hidden {
+    display: none;
+  }
+
+  .info-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+  }
+
+  /* Info Header Styles */
+  .info-header {
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .info-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .info-header h2 i {
+    color: #000000;
+    font-size: 1.2rem;
+  }
+
+  .info-container .capture-form-header h2 i {
+    color: #000000;
+  }

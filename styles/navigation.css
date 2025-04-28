@@ -1,0 +1,899 @@
+  /* --- Left Panel --- */
+  .info-tab {
+    width: 25vw;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  /* Remove duplicate info-tab styles */
+  .info-tab.hidden {
+    transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+    /* --- Header Content --- */
+    .header-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #000000;
+        height: 75px;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+    }
+
+    .logo-container {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+    }
+
+    .logo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .header-text {
+        flex: 1;
+        text-align: center;
+        margin-right: 57px; /* To balance with logo container width */
+    }
+
+    /* --- Typography for Left Panel --- */
+    .info-tab h1 {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    
+    .info-tab p {
+        font-size: 0.75rem;
+        max-width: 100%;
+        line-height: 1.2;
+        color: #666666;
+        margin: 0;
+        padding: 0;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: left;
+    }
+
+        /* --- Navigation Lists --- */
+  .info-tab ul {
+    margin: 0;
+    list-style: none;
+    width: 100%;
+  }
+  
+  .info-tab ul li {
+    margin: 0;
+    width: 100%;
+  }
+  
+  /* --- Navigation Links --- */
+  .info-tab ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    color: #333333;
+    padding: 12px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    height: 50px;
+    border: 1px solid transparent;
+    width: 60px;
+    min-width: 0;
+  }
+  
+  .info-tab ul li a i {
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+  }
+  
+  .info-tab ul li a span {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+  
+  /* --- Navigation Hover & Active States --- */
+  .info-tab ul li a:hover {
+    background-color: #eeeeee;
+    transform: translateY(-2px);
+    border-color: #e0e0e0;
+  }
+  
+  .info-tab ul li a.active {
+    background-color: #333333;
+    color: #ffffff;
+    transform: translateY(0);
+    border-color: #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-tab ul li a.active:hover {
+    transform: translateY(0);
+  }
+  
+  /* --- Right Panel --- */
+  .right-panel {
+    width: 25vw;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 0; /* Remove padding to maximize space */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: width 0.3s ease, padding 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1;
+  }
+  
+  /* --- Collapse & Expand Buttons --- */
+  #collapse-left,
+  #collapse-right,
+  #expand-left,
+  #expand-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(51, 51, 51, 0.1);
+    border: none;
+    color: #333333;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 1000;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* --- Left Panel Button Positioning --- */
+  #collapse-left {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    display: flex !important;
+  }
+  
+  /* Position expand button to match header container height */
+  #expand-left {
+    position: fixed;
+    left: 30px;
+    transform: translateX(-50%);  /* Adjust for center alignment */
+    top: 15px;  /* Align with header */
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 25%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 2000;
+  }
+  
+  /* --- Right Panel Button Positioning --- */
+  #collapse-right {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  #expand-right {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  /* --- Panel Hidden States --- */
+  .info-tab.hidden,
+  .right-panel.hidden {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+  /* --- Button Visibility States --- */
+  #collapse-left,
+  #collapse-right,
+  #expand-left,
+  #expand-right {
+    position: fixed;
+  }
+  
+  .info-tab:not(.hidden) ~ #collapse-left,
+  .right-panel:not(.hidden) ~ #collapse-right {
+    display: flex;
+  }
+  
+  .info-tab.hidden ~ #expand-left,
+  .right-panel.hidden ~ #expand-right {
+    display: flex;
+  }
+  
+  /* --- Button Hover Effects --- */
+  #collapse-left:hover,
+  #collapse-right:hover,
+  #expand-left:hover,
+  #expand-right:hover {
+    background: rgba(51, 51, 51, 0.2);
+  }
+
+    /* --- Panel Expand Buttons --- */
+    #expand-left,
+    #expand-right {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    #expand-left:hover,
+    #expand-right:hover {
+      background: #f5f5f5;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* --- Panel Collapse Buttons --- */
+    #collapse-left,
+    #collapse-right {
+      background: rgba(51, 51, 51, 0.1);
+    }
+    
+    #collapse-left:hover,
+    #collapse-right:hover {
+      background: rgba(51, 51, 51, 0.2);
+    }
+
+      /* --- Explorer Tabs Navigation --- */
+  .explorer-tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding-bottom: 2px;
+  }
+  
+  .explorer-tab-btn {
+    padding: 8px 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .explorer-tab-btn.active {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-bottom: none;
+  }
+  
+  /* --- Explorer Tab Content --- */
+  .explorer-tab-content {
+    display: none;
+    padding: 15px;
+  }
+  
+  .explorer-tab-content.active {
+    display: block;
+  }
+  
+  /* --- Explorer Subtabs --- */
+  .explorer-subtabs {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 75px;
+    margin: 0;
+    display: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #ffffff;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* --- Discovery Tab Subtabs --- */
+  .activity-tab[data-activity="discovery"].active + .explorer-subtabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .explorer-subtabs.show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+  }
+  
+  /* --- Explorer Subtab Buttons --- */
+  .explorer-subtabs .explorer-tab-btn {
+    margin-bottom: 0;
+    padding: 6px 8px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 120px;
+  }
+  
+  /* Hide archive subtab button */
+  .explorer-tab-btn[data-tab="archive"] {
+    display: none !important;
+  }
+
+  .explorer-subtabs .explorer-tab-btn i {
+    display: block;
+    font-size: 1.1em;
+    width: auto;
+    height: auto;
+    line-height: 1.2;
+    margin: 0 0 3px 0;
+    color: hsl(0, 0%, 90%);
+  }
+  
+  .explorer-subtabs .explorer-tab-btn span {
+    display: block;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 0.8em;
+    width: 100%;
+    color: hsl(0, 0%, 90%);
+  }
+  
+
+  
+  .explorer-subtabs .explorer-tab-btn.active {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transform: translateY(0);
+  }
+  
+  .explorer-subtabs .explorer-tab-btn.active i,
+  .explorer-subtabs .explorer-tab-btn.active span {
+    color: #000000;
+  }
+  
+  /* --- Activity Tabs Container --- */
+  .activity-tabs-container {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background-color: #000000;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* This will push it to the bottom of its container */
+  }
+  
+  /* --- Activity Tabs List --- */
+  .activity-tabs-container ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  .activity-tabs-container li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 120px;
+    height: 100%;
+  }
+  
+  /* --- Activity Tab Buttons --- */
+  .activity-tabs-container .activity-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    height: 50px;
+    border: 0px solid #000000;
+    width: 100%;
+    min-width: 0;
+  }
+  
+  .activity-tabs-container .activity-tab i {
+    margin: 0 0 2px 0;
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 25%);
+  }
+  
+  .activity-tabs-container .activity-tab span {
+    font-size: 0.9rem;
+    text-align: center;
+    color: hsl(0, 0%, 25%);
+    line-height: 1.1;
+  }
+  
+  /* --- Activity Tab States --- */
+  .activity-tabs-container .activity-tab:hover {
+    background-color: #000000;
+  }
+  
+  .activity-tabs-container .activity-tab.active {
+    background-color: #000000 !important;
+    transform: translateY(0);
+    border-color: #000000 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .activity-tabs-container .activity-tab.active i,
+  .activity-tabs-container .activity-tab.active span {
+    color: #ffffff;
+  }
+  
+  /* --- Info Tab Lists --- */
+  .info-tab ul {
+    margin: 0;
+    list-style: none;
+  }
+  
+  .info-tab ul li {
+    margin: 0;
+    padding: 0;
+  }
+
+    /* Update the hidden state styles for the info-tab */
+  .info-tab.hidden {
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden; /* Add this for better hiding */
+  }
+  
+  /* --- Panel Control Buttons --- */
+  .panel-control-btn {
+    background: white;
+    border: none;
+    border-radius: 25%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  .panel-control-btn i {
+    color: black;
+    font-size: 1.2rem;
+  }
+  
+  .panel-control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .panel-control-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .panel-control-btn.hidden {
+    display: none;
+  }
+  
+  .info-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 25vw;
+    background-color: white;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+  
+  .info-tab.hidden {
+    transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .panel-control-btn {
+      width: 36px;
+      height: 36px;
+      background: white;
+      border-radius: 25%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .panel-control-btn i {
+      font-size: 1.1rem;
+      color: black;
+    }
+    
+    #expand-left {
+      left: 30px;
+      transform: translateX(-50%);
+      top: 60px;
+      z-index: 3000;
+      background: white !important;
+      display: none;
+    }
+    
+    .header-content #collapse-left {
+      right: 20px;
+      background: white !important;
+    }
+    
+    .info-tab {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Remove any existing color overrides for mobile */
+    #expand-left i,
+    #collapse-left i {
+      color: black;
+    }
+  }
+  
+  /* --- Sub Tab Content --- */
+  .sub-tab-content {
+    display: none;
+    padding: 10px;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+  }
+
+  
+  
+  /* --- Display Controls --- */
+  .display-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9em;
+  }
+  
+  /* --- Control Groups --- */
+  .control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .control-group label {
+    min-width: 100px;
+    font-size: 0.9em;
+  }
+  
+  .control-group select,
+  .control-group input[type="range"] {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* --- Display Controls Visibility --- */
+  .explorer-tab-btn[data-tab="display"].active ~ #display-controls {
+    display: block;
+  }
+  
+  /* --- Display Controls Container --- */
+  #display-controls {
+    display: none;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 0, 128, 0.1);
+    max-height: calc(100vh - 450px);
+    overflow-y: auto;
+    position: absolute;
+    top: 340px;
+    left: 15px;
+    right: 15px; /* Adjusted to have equal margins on both sides */
+    width: calc(100% - 110px); /* Adjusted to match the new margins */
+    margin: 0 15px;
+    z-index: 900;
+  }
+  
+  /* --- Subtabs Divider --- */
+  .subtabs-divider {
+    height: 2px;
+    background: linear-gradient(to right, 
+        rgba(255, 0, 128, 0),
+        rgba(255, 0, 128, 0.2),
+        rgba(255, 0, 128, 0));
+    position: absolute;
+    top: 330px;
+    left: 15px;
+    right: 15px; /* Match display controls right margin */
+    margin: 0 15px;
+  }
+  
+  /* --- Display Modes --- */
+  .chat-container.compact .message {
+    padding: 5px;
+    margin: 5px 0;
+  }
+  
+  .chat-container.expanded .message {
+    padding: 20px;
+    margin: 15px 0;
+  }
+  
+  /* --- Enhanced Display Controls --- */
+  .display-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  /* --- Enhanced Control Groups --- */
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .control-group:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 0, 128, 0.05);
+  }
+  
+  /* --- Control Group Labels --- */
+  .control-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #2d3748;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  /* --- Control Group Inputs --- */
+  .control-group select,
+  .control-group input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(203, 213, 224, 0.5);
+    border-radius: 6px;
+    background: white;
+  }
+  
+  .control-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #FF0080;
+  }
+  
+  /* --- Font Size Display --- */
+  #fontSizeValue {
+    display: block;
+    text-align: right;
+    color: #FF0080;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  /* --- Display Controls Title --- */
+  .display-controls::before {
+    content: 'Display Settings';
+    display: block;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 0, 128, 0.1);
+  }
+  
+  /* --- Left Section Layout --- */
+  .left-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* --- Info Tab --- */
+  .info-tab {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  /* --- Panel Button Positioning --- */
+  .panel-control-btn {
+    margin-top: auto;
+  }
+
+  /* --- Tablet Styles --- */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .info-tab {
+        width: 30vw;
+    }
+
+    .right-panel {
+        width: 30vw;
+    }
+  }
+
+  /* --- Desktop Styles --- */
+  @media screen and (min-width: 1025px) {
+    .info-tab {
+        width: 25vw;
+    }
+
+    .right-panel {
+        width: 25vw;
+    }
+  }
+
+  /* Position collapse button inside header */
+  .header-content #collapse-left {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000;
+    background-color: transparent !important;
+  }
+
+  /* Show/hide button states */
+  .info-tab.hidden ~ #expand-left,
+  body:has(.info-tab.hidden) #expand-left {
+    display: flex !important;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .info-tab:not(.hidden) ~ #expand-left,
+  body:not(:has(.info-tab.hidden)) #expand-left {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .panel-control-btn {
+      width: 32px;
+      height: 32px;
+    }
+
+    .header-content #collapse-left {
+      right: 20px;
+      z-index: 2000;
+    }
+
+    .info-tab.hidden ~ #expand-left {
+      display: flex !important;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  /* Specific styles for expand button */
+  #expand-left i {
+    color: #000000; /* Magenta color */
+  }
+
+  /* Specific styles for collapse button */
+  #collapse-left i {
+    color: #ffffff; /* Magenta color */
+  }
+
+  /* Desktop Styles */
+  @media (min-width: 768px) {
+    .left-section {
+      width: 25%;
+      min-width: 450px;
+      max-width: 450px;
+      position: relative;
+      transition: none !important;
+    }
+
+    .left-section.collapsed {
+      width: 25% !important;
+      min-width: 450px !important;
+      max-width: 450px !important;
+    }
+
+    .info-tab {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: none !important;
+    }
+
+    .info-tab.collapsed {
+      width: 100% !important;
+    }
+
+    #expand-left,
+    #collapse-left {
+      display: none !important;
+    }
+  }

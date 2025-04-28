@@ -1,0 +1,396 @@
+/* ========== HELP CONTAINER STYLES ========== */
+
+  /* --- Help Container --- */
+  .help-container {
+    position: absolute;
+    top: 300px;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    background: white;
+    padding: 20px;
+    z-index: 900;
+    width: calc(100% - 30px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-radius: 8px;
+    /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);*/
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E0 #F7FAFC;
+  }
+  
+  .help-container .help-section {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+  }
+  
+  /* --- Help Items --- */
+  .help-container .help-item {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #edf2f7;
+    border-left: 4px solid transparent;
+  }
+  
+  /* Add section dividers */
+  .help-container .help-item:not(:last-child) {
+    border-bottom: 1px solid #edf2f7;
+  }
+  
+  /* --- Help Item Headers --- */
+  .help-container .help-item h4 {
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+  }
+  
+  /* --- Help Item Dropdown Arrows --- */
+  .help-container .help-item h4::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    color: #666;
+  }
+  
+  .help-container .help-item h4.expanded::after {
+    transform: rotate(180deg);
+    color: #FF0080;
+  }
+  
+  /* --- Help Content --- */
+  .help-container .help-content {
+    display: none;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #e9ecef;
+    width: 100%;
+  }
+  
+  .help-container .help-content.visible {
+    display: block;
+  }
+  
+  /* --- Help Content Text --- */
+  .help-container .help-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  
+  /* --- Help Content Lists --- */
+  .help-container .help-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .help-container .help-content li {
+    margin: 0;
+    color: #4a5568;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+  }
+  
+  .help-container .help-content li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+    color: #FF0080;
+  }
+  
+  .help-container .help-content li strong {
+    color: #2d3748;
+    font-weight: 600;
+    margin-right: 4px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  /* --- Help Container Scrollbar --- */
+  .help-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .help-container::-webkit-scrollbar-track {
+    background: #F7FAFC;
+  }
+  
+  /* --- Help Container --- */
+  .help-container {
+    position: absolute;
+    top: 300px;
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    background: white;
+    padding: 20px;
+    z-index: 900;
+    width: calc(100% - 30px);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-radius: 8px;
+    /*box-shadow: 0 2px 4px rgba(0,0,0,0.1);*/
+  }
+  
+  .help-container .help-section {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+  }
+  
+  /* Update help item styles */
+  .help-container .help-item {
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #edf2f7;
+    border-left: 4px solid transparent;
+  }
+  
+  .help-container .help-item h4 {
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%; /* Add this */
+  }
+  
+  /* Add back the arrow indicator */
+  .help-container .help-item h4::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    color: #666;
+  }
+  
+  .help-container .help-item h4.expanded::after {
+    transform: rotate(180deg);
+    color: #FF0080;
+  }
+  
+  /* Fix content layout */
+  .help-container .help-content {
+    display: none;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid #e9ecef;
+    width: 100%; /* Add this */
+  }
+  
+  .help-container .help-content.visible {
+    display: block; /* Change from flex to block */
+  }
+  
+  /* Improve content layout */
+  .help-container .help-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    width: 100%; /* Add this */
+  }
+  
+  .help-container .help-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .help-container .help-content li {
+    margin: 0;
+    color: #4a5568;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+  }
+  
+  .help-container .help-content li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+    color: #FF0080;
+  }
+  
+  .help-container .help-content li strong {
+    color: #2d3748;
+    font-weight: 600;
+    margin-right: 4px;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  /* Add section dividers */
+  .help-container .help-item:not(:last-child) {
+    border-bottom: 1px solid #edf2f7;
+  }
+  
+  /* Improve scroll experience */
+  .help-container {
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E0 #F7FAFC;
+  }
+  
+  .help-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .help-container::-webkit-scrollbar-track {
+    background: #F7FAFC;
+  }
+  
+  .help-container::-webkit-scrollbar-thumb {
+    background-color: #CBD5E0;
+    border-radius: 4px;
+    border: 2px solid #F7FAFC;
+  }
+  
+  /* Add hover effect for better interactivity */
+  .help-container .help-item:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+  }
+  
+  /* Add category indicators */
+  .help-container .help-item {
+    border-left: 4px solid transparent;
+  }
+  
+  .help-container .help-item[data-category="getting-started"] {
+    border-left-color: #FF0080;
+  }
+  
+  .help-container .help-item[data-category="explorer"] {
+    border-left-color: #00B5D8;
+  }
+  
+  .help-container .help-item[data-category="journey"] {
+    border-left-color: #48BB78;
+  }
+  
+  .help-container .help-item[data-category="discovery"] {
+    border-left-color: #9F7AEA;
+  }
+  
+  .help-container .help-item[data-category="archive"] {
+    border-left-color: #ED8936;
+  }
+  
+  .help-container .help-item[data-category="features"] {
+    border-left-color: #4299E1;
+  }
+  
+  .help-container .help-item[data-category="tips"] {
+    border-left-color: #ECC94B;
+  }
+  
+  .help-container .help-item[data-category="privacy"] {
+    border-left-color: #718096;
+  }
+
+    /* --- Help Section --- */
+    .help-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .help-section {
+      padding: 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .help-section:hover {
+      background: #f0f2f5;
+    }
+    
+    /* --- Help Headers --- */
+    .help-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    
+    .help-header i {
+      font-size: 18px;
+      color: #666;
+    }
+    
+    .help-header h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    
+    /* --- Help Lists --- */
+    .help-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .help-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #666;
+    }
+    
+    .help-list li i {
+      color: #666;
+      margin-top: 4px;
+    }
+    
+    .help-list li span {
+      flex: 1;
+      line-height: 1.4;
+    }

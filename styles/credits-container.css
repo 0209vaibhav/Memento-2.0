@@ -1,0 +1,403 @@
+/* ========== CREDITS CONTAINER STYLES ========== */
+
+.credits-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  position: absolute;
+  top: 125px;
+  left: 0px;
+  right: 0px;
+  bottom: 75px;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 900;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+  
+  /* Custom scrollbar for Webkit browsers */
+  .credits-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .credits-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .credits-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .credits-container::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .credits-header {
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+  
+  .credits-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .credits-header h2::before {
+    content: none !important;  /* Remove any inherited icon */
+  }
+  
+  .credits-header h2 i {
+    color: #000000;
+  }
+  
+  .credits-content {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .credits-section {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+  }
+
+  .credits-section:hover {
+    background: #f8f9fa;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .credits-section h3 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000000;
+  }
+
+  .credits-section p {
+    color: #4a5568;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+  }
+
+  .credits-section .creator-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .credits-section .creator-info i {
+    color: #000000;
+    font-size: 1.2rem;
+  }
+
+  .credits-section .creator-info span {
+    font-weight: 600;
+    color: #2d3748;
+  }
+
+  .credits-section .studio-credit {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .credits-section .studio-credit i {
+    color: #000000;
+    font-size: 1.2rem;
+    margin-top: 4px;
+  }
+
+  .credits-section .studio-name {
+    font-weight: 600;
+    color: #000000;
+  }
+
+  .credits-section .instructors {
+    color: #000000;
+    font-size: 0.95rem;
+  }
+
+  .credits-section .semester {
+    color: #000000;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .credits-section .institution {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .credits-section .institution i {
+    color: #000000;
+    font-size: 1.2rem;
+    margin-top: 4px;
+  }
+
+  .credits-section .institution p {
+    margin: 0 0 5px 0;
+  }
+
+  .credits-section .institution p:first-child {
+    font-weight: 600;
+    color: #000000;
+  }
+
+    /* --- Section Headers --- */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .section-header i {
+      font-size: 24px;
+      color: #666;
+    }
+    
+    .section-header h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    
+    /* --- Team Section --- */
+    .team-content {
+      display: flex;
+      flex-direction: column;
+    }
+      
+    /* --- Creator Information --- */
+    .creator-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    
+    .creator-info i {
+      font-size: 20px;
+      color: #666;
+    }
+    
+    /* --- Studio Credits Section --- */
+    .studio-credits {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 12px;
+    }
+    
+    .studio-credit {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+   
+    .studio-credit i {
+      font-size: 18px;
+      color: #666;
+      margin-top: 4px;
+    }
+    
+    .studio-name {
+      font-weight: 500;
+      margin: 0;
+      color: #333;
+    }
+    
+    .instructors {
+      margin: 4px 0 0;
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    .semester {
+      margin: 2px 0 0;
+      color: #888;
+      font-size: 0.85em;
+      font-style: italic;
+    }
+    
+    /* --- Program Information --- */
+    .program-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+   
+    .program-info i {
+      font-size: 20px;
+      color: #666;
+      margin-top: 4px;
+    }
+    
+    .program-info p {
+      margin: 0 0 4px;
+      line-height: 1.4;
+    }
+    
+    .program-info p:first-child {
+      color: #333;
+      font-weight: 500;
+    }
+    
+    .program-info p:not(:first-child) {
+      color: #666;
+      font-size: 0.9em;
+    }
+    
+    /* --- Institution Information --- */
+    .institution {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .institution i {
+      font-size: 20px;
+      color: #666;
+      margin-top: 4px;
+    }
+    
+    .institution p {
+      margin: 0 0 4px;
+    }
+    
+    /* --- Contact Section --- */
+    .contact-intro {
+      margin-bottom: 20px;
+      color: #666;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      background: #f0f2f5;
+      transform: translateX(4px);
+    }
+    
+    .contact-item i {
+      color: #666;
+    }
+    
+      /* --- Team Grid Layout --- */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #000000;
+  }
+  
+  .team-member h3 {
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .team-member p {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* --- Contact Information (Extended) --- */
+  .contact-info {
+    margin-bottom: 30px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-item i {
+    color: #000000;
+    font-size: 24px;
+    margin-right: 15px;
+    width: 30px;
+    text-align: center;
+  }
+  
+  .contact-item p {
+    margin: 0;
+    color: #555;
+  }
+  
+  /* --- Social Links --- */
+  .social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .social-links a {
+    color: #000000;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #000000;
+  }

@@ -1,0 +1,58 @@
+/* Mapbox Control Icons */
+.mapboxgl-ctrl-group {
+  background: transparent !important;
+  box-shadow: none !important;
+  position: fixed !important;
+  bottom: 15px !important;
+  left: 15px !important;
+  z-index: 1 !important;
+
+}
+
+.mapboxgl-ctrl-group button {
+  background: transparent !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.mapboxgl-ctrl-group button:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.mapboxgl-ctrl-group button .mapboxgl-ctrl-icon {
+  background-color: transparent !important;
+}
+
+.mapboxgl-ctrl-group button:hover .mapboxgl-ctrl-icon {
+}
+
+.mapboxgl-ctrl-group button+button {
+  border-top: 1px solid #ffffff00;
+}
+
+.mapboxgl-ctrl.locate-me-control {
+  position: fixed !important;
+  bottom: 100px !important;
+  left: 5px !important;
+  z-index: 100 !important;
+}
+
+.locate-me-button {
+  background-color: transparent !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+} 
+
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-attrib-button {
+  display: none !important;
+}
+.mapboxgl-ctrl-attrib.mapboxgl-compact {
+  display: none !important;
+}

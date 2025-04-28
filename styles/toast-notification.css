@@ -1,0 +1,91 @@
+/* ========== TOAST NOTIFICATION STYLES ========== */
+
+  /* --- Toast Base --- */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+  
+  /* --- Toast States --- */
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .toast i {
+    font-size: 18px;
+  }
+  
+  /* --- Toast Types --- */
+  .toast.success {
+    background-color: #4CAF50;
+  }
+  
+  .toast.error {
+    background-color: #f44336;
+  }
+  
+  .toast.info {
+    background-color: #2196F3;
+  }
+  
+  .toast.warning {
+    background-color: #ff9800;
+  }
+  
+  /* --- Toast With Animations --- */
+  .toast.animated {
+    animation: fadeInOut 3s ease forwards;
+  }
+  
+  /* --- Feedback Toast --- */
+  .feedback-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #FF0080, #FF66B2);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.2);
+    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
+    z-index: 1000;
+  }
+  
+  /* --- Alternative Toast Style --- */
+  .toast.alt-style {
+    padding: 12px 24px;
+    background: #333;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: slideInHorizontal 0.3s ease, simpleFadeOut 0.3s ease 2.7s forwards;
+  }
+  
+  .toast.alt-style.error {
+    background: #ff4444;
+  }
+  
+  .toast.alt-style i {
+    font-size: 1.1rem;
+  }

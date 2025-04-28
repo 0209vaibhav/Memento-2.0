@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ephemeral",
+    "name": "Ephemeral",
+    "symbol": "🌀"
+  },
+  {
+    "id": "unmapped",
+    "name": "Unmapped",
+    "symbol": "📍"
+  },
+  {
+    "id": "niche",
+    "name": "Niche/Cult",
+    "symbol": "🧬"
+  },
+  {
+    "id": "emotional",
+    "name": "Emotionally Charged",
+    "symbol": "💫"
+  },
+  {
+    "id": "hidden",
+    "name": "Hidden Gem",
+    "symbol": "🕵️"
+  },
+  {
+    "id": "unexpected",
+    "name": "Unexpected Encounter",
+    "symbol": "🎭"
+  },
+  {
+    "id": "reflective",
+    "name": "Reflective",
+    "symbol": "🪞"
+  },
+  {
+    "id": "unpleasant",
+    "name": "Unpleasant Truth",
+    "symbol": "💔"
+  },
+  {
+    "id": "rare",
+    "name": "Once-in-a-While",
+    "symbol": "⏳"
+  },
+  {
+    "id": "recurring",
+    "name": "Recurring Ritual",
+    "symbol": "🔄"
+  },
+  {
+    "id": "local",
+    "name": "Local Flavor",
+    "symbol": "🧃"
+  },
+  {
+    "id": "performative",
+    "name": "Performative",
+    "symbol": "💃"
+  },
+  {
+    "id": "blink",
+    "name": "Blink and You Miss It",
+    "symbol": "👀"
+  },
+  {
+    "id": "social-heavy",
+    "name": "Highly Social",
+    "symbol": "🧲"
+  },
+  {
+    "id": "nightlife",
+    "name": "Nightlife Pulse",
+    "symbol": "🌃"
+  },
+  {
+    "id": "touristy",
+    "name": "Touristy Yet Fun",
+    "symbol": "🧳"
+  },
+  {
+    "id": "clean-cut",
+    "name": "Over-Polished",
+    "symbol": "🧼"
+  },
+  {
+    "id": "beginner",
+    "name": "First-Time Friendly",
+    "symbol": "🐣"
+  },
+  {
+    "id": "iconic",
+    "name": "Iconic Landmark",
+    "symbol": "🏙️"
+  },
+  {
+    "id": "other",
+    "name": "Other",
+    "symbol": "🗂️"
+  }
+]

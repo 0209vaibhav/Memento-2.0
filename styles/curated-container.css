@@ -1,0 +1,510 @@
+/* ========== CURATED CONTAINER STYLES ========== */
+
+.curated-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  position: absolute;
+  top: 125px;
+  left: 0px;
+  right: 0px;
+  bottom: 75px;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 900;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.curated-container.hidden {
+  display: none;
+}
+
+/* Curated Header Styles */
+.curated-header {
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: fixed;
+  top: 125px;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.curated-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.curated-header h2 i {
+  color: #000000;
+  font-size: 1.2rem;
+}
+
+/* Curated Tabs Styles */
+.curated-tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  justify-content: space-between;
+  position: fixed;
+  top: 178px;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 1000;
+  padding: 8px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.curated-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  color: hsla(0, 0%, 75%, 0.5);
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 25%;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.curated-tab-btn:hover {
+  color: hsl(0, 0%, 50%);
+}
+
+.curated-tab-btn.active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.curated-tab-btn i {
+  font-size: 1.1rem;
+}
+
+/* Refresh Button Styles */
+.curated-tab-btn .refresh-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.curated-tab-btn:hover .refresh-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.curated-tab-btn .refresh-btn:hover {
+  background: #f3f4f6;
+  transform: scale(1.1);
+}
+
+.curated-tab-btn .refresh-btn i {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.curated-tab-btn .refresh-btn:hover i {
+  color: #000000;
+}
+
+/* Curated Tab Content Styles */
+.curated-tab-content {
+  display: none;
+  width: 100%;
+}
+
+.curated-tab-content.active {
+  display: block;
+  width: 100%;
+}
+
+.curated-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 120px; /* Adjust based on header + tabs height */
+  margin-bottom: 60px;
+  padding-bottom: 16px;
+}
+
+/* Memento Item Styles */
+.curated-list .memento-item {
+  background: white;
+  overflow: hidden;
+}
+
+.curated-list .memento-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-color: #000000;
+}
+
+.curated-list .memento-item .memento-content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000000;
+  overflow: hidden;
+  background: white;
+  border: 1px solid hsl(0, 0%, 75%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content styling */
+.curated-list .memento-item .memento-content {
+  padding: 16px;
+  margin: 16px;
+}
+
+.curated-list .memento-item .media-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin-bottom: 16px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.curated-list .memento-item .memento-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.curated-list .memento-item .memento-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.curated-list .memento-item .details-actions-container {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+.curated-list .memento-item .memento-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 16px;
+  width: 100%;
+}
+
+.curated-list .memento-item .memento-name {
+  font-size: 1.0em;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  letter-spacing: 0.05em;
+  font-style: italic;
+  font-family: 'Segoe Print', 'Bradley Hand', cursive;
+  text-transform: uppercase;
+}
+
+.curated-list .memento-item .memento-name span {
+  word-wrap: break-word;
+  white-space: normal;
+  border-bottom: 1px solid hsl(0, 0%, 75%);
+  padding-bottom: 4px;
+  flex: 1;
+}
+
+.curated-list .memento-item .memento-description {
+  font-size: 0.8em;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  word-wrap: break-word;
+  white-space: normal;
+  font-style: italic;
+  font-family: 'Segoe Print', 'Bradley Hand', cursive;
+}
+
+.curated-list .memento-item .memento-timestamp,
+.curated-list .memento-item .memento-location {
+  font-size: 0.8em;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  word-wrap: break-word;
+  white-space: normal;
+  font-style: italic;
+  font-family: 'Segoe Print', 'Bradley Hand', cursive;
+}
+
+.curated-list .memento-item .memento-attributes-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid hsl(0, 0%, 75%);
+}
+
+.curated-list .memento-item .memento-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0px;
+  font-size: 0.8em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.curated-list .memento-item .memento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.curated-list .memento-item .memento-tags .tag {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  font-size: 0.8em;
+  padding: 8px;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.curated-list .memento-item .memento-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
+.curated-list .memento-item .view-on-map-btn {
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.curated-list .memento-item .view-on-map-btn:hover {
+  background: white;
+  transform: scale(1.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.curated-list .memento-item .view-on-map-btn i {
+  color: #333;
+  font-size: 16px;
+}
+
+/* Placeholder styling */
+.curated-list .memento-item .placeholder-media {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.curated-list .memento-item .placeholder-media i {
+  font-size: 48px;
+}
+
+.curated-list .memento-item .memento-duration,
+.curated-list .memento-item .memento-author {
+  font-size: 0.8em;
+  color: #000000;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  word-wrap: break-word;
+  white-space: normal;
+  font-style: italic;
+  font-family: 'Segoe Print', 'Bradley Hand', cursive;
+}
+
+.curated-list .memento-item .memento-duration i,
+.curated-list .memento-item .memento-author i {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.curated-list .memento-item .memento-duration-text,
+.curated-list .memento-item .memento-author-text {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Loading Spinner Styles */
+.curated-list .recommended-message .fa-spinner,
+.curated-list .trending-message .fa-spinner,
+.curated-list .daily-message .fa-spinner,
+.curated-list .near-me-message .fa-spinner {
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Recommendation Pagination Styles */
+.recommendation-pagination,
+.trending-pagination,
+.daily-pagination,
+.near-me-pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  position: fixed;
+  bottom: 75px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recommendation-pagination .pagination-btn,
+.trending-pagination .pagination-btn,
+.daily-pagination .pagination-btn,
+.near-me-pagination .pagination-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  background: #ffffff;
+  color: hsl(0, 0%, 50%);
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.recommendation-pagination .pagination-btn:hover,
+.trending-pagination .pagination-btn:hover,
+.daily-pagination .pagination-btn:hover,
+.near-me-pagination .pagination-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.recommendation-pagination .pagination-btn.active,
+.trending-pagination .pagination-btn.active,
+.daily-pagination .pagination-btn.active,
+.near-me-pagination .pagination-btn.active {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+}
+
+.recommendation-pagination .refresh-btn,
+.trending-pagination .refresh-btn,
+.daily-pagination .refresh-btn,
+.near-me-pagination .refresh-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.recommendation-pagination .refresh-btn:hover,
+.trending-pagination .refresh-btn:hover,
+.daily-pagination .refresh-btn:hover,
+.near-me-pagination .refresh-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.recommendation-pagination .refresh-btn i,
+.trending-pagination .refresh-btn i,
+.daily-pagination .refresh-btn i,
+.near-me-pagination .refresh-btn i {
+  font-size: 14px;
+}
+
+

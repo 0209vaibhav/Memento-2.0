@@ -1,0 +1,51 @@
+rules_version = '2';
+
+// Craft rules based on data in your Firestore database
+// allow write: if firestore.get(
+//    /databases/(default)/documents/users/$(request.auth.uid)).data.isAdmin;
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Base function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Function to check if file size is within limits
+    function isValidSize(maxSize) {
+      return request.resource.size < maxSize;
+    }
+    
+    // Function to check if file is an image
+    function isImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    // Function to check if file is a video
+    function isVideo() {
+      return request.resource.contentType.matches('video/.*');
+    }
+    
+    // Default deny all
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+    
+    // User profile photos
+    match /users/{userId}/profile/{fileName} {
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow write: if isAuthenticated() 
+                  && request.auth.uid == userId
+                  && isValidSize(5 * 1024 * 1024)  // 5MB
+                  && isImage();
+    }
+    
+    // Mementos folder - allow users to access their own mementos
+    match /mementos/{userId}/{fileName} {
+      allow read: if isAuthenticated() && request.auth.uid == userId;
+      allow write: if isAuthenticated() 
+                  && request.auth.uid == userId
+                  && isValidSize(10 * 1024 * 1024)  // 10MB
+                  && (isImage() || isVideo());
+    }
+  }
+}

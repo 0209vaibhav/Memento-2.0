@@ -1,0 +1,203 @@
+/* ========== MESSAGE CONTAINER STYLES ========== */
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    border: 1px solid hsla(0, 0%, 50%, 0.25);
+    min-height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.message-container .icon {
+    font-size: 48px;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.message-container .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    font-style: italic;
+    font-family: 'Segoe Print', 'Bradley Hand', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+.message-container .description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-style: italic;
+    font-family: 'Segoe Print', 'Bradley Hand', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+.message-container .suggestion {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    font-family: 'Segoe Print', 'Bradley Hand', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+/* Message Types */
+.no-mementos-message,
+.no-drafts-message,
+.live-feed-no-items-message,
+.live-feed-error-message,
+.drafts-loading,
+.drafts-no-items-message,
+.drafts-error-message,
+.mementos-loading,
+.mementos-no-items-message,
+.mementos-error-message,
+.no-my-mementos-message,
+.trending-message,
+.recommended-message,
+.daily-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    border: 0px solid hsla(0, 0%, 50%, 0.25);
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    grid-column: 1 / -1;
+}
+
+.no-mementos-message p,
+.no-drafts-message p,
+.live-feed-no-items-message p,
+.live-feed-error-message p,
+.drafts-loading p,
+.drafts-no-items-message p,
+.drafts-error-message p,
+.mementos-loading p,
+.mementos-no-items-message p,
+.mementos-error-message p,
+.no-my-mementos-message p,
+.trending-message p,
+.recommended-message p,
+.daily-message p {
+    font-size: 1rem;
+    color: hsla(0, 0%, 50%, 0.5);
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.no-mementos-message .icon,
+.no-drafts-message .icon,
+.live-feed-no-items-message .icon,
+.live-feed-error-message .icon,
+.drafts-loading .icon,
+.drafts-no-items-message .icon,
+.drafts-error-message .icon,
+.mementos-loading .icon,
+.mementos-no-items-message .icon,
+.mementos-error-message .icon,
+.no-my-mementos-message .icon,
+.trending-message i,
+.recommended-message i,
+.daily-message i {
+    font-size: 48px;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+/* Specific styles for no-drafts and no-mementos messages */
+.no-drafts-message,
+.no-mementos-message {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    grid-column: 1 / -1;
+}
+
+/* Live Feed Specific Styles */
+.live-feed-no-items-message {
+    height: 650px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.live-feed-no-items-message > p {
+    color: #666 !important;
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+    width: 100%;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    max-width: none !important;
+    white-space: normal !important;
+    word-wrap: normal !important;
+}
+
+/* Error Message Specific Styles */
+.error-message .retry-button,
+.mementos-error-message .retry-button,
+.live-feed-error-message .retry-button {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.error-message .retry-button:hover,
+.mementos-error-message .retry-button:hover,
+.live-feed-error-message .retry-button:hover {
+    background: #000000;
+}
+
+.error-message .admin-note,
+.mementos-error-message .admin-note,
+.live-feed-error-message .admin-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.error-message .admin-note a,
+.mementos-error-message .admin-note a,
+.live-feed-error-message .admin-note a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.error-message .admin-note a:hover,
+.mementos-error-message .admin-note a:hover,
+.live-feed-error-message .admin-note a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .message-container {
+        width: 100%;
+    }
+} 

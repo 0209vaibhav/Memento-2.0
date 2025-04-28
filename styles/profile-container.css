@@ -1,0 +1,922 @@
+/* ========== PROFILE CONTAINER STYLES ========== */
+
+  /* --- Profile Container --- */
+  .profile-container {
+    padding: 0%;
+    background: white;
+    border-radius: 12px;
+  }
+  
+  /* --- Profile Header --- */
+  .profile-header {
+    font-family: Arial, sans-serif;
+    color: #333333;
+    list-style: none;
+    position: relative;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .profile-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .profile-header h2::before {
+    content: none !important;  /* Remove any inherited icon */
+  }
+  
+  .profile-header h2 i {
+    color: #000000;
+  }
+
+    /* --- Profile Detail Section --- */
+  .detail-section {
+    flex: 1;
+  }
+  
+  .detail-row {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: white;
+  }
+  
+  .detail-row span:first-child {
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .detail-value {
+    margin-left: auto;
+    margin-right: 15px;
+    color: #666;
+    font-size: 14px;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60%;
+  }
+  
+  /* --- Chevron Button --- */
+  .chevron-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .chevron-btn::before {
+    content: '\f044';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+  }
+  
+  .chevron-btn:hover {
+    color: #FF0080;
+  }
+  
+  /* Profile photo styles */
+  .profile-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+    margin-right: 15px;
+    object-fit: cover;
+    background-color: #f0f0f0;
+  }
+  
+  .profile-photo[src="default-avatar.png"],
+  .profile-photo[src*="default-avatar.png"] {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .profile-photo[src="default-avatar.png"]::before,
+  .profile-photo[src*="default-avatar.png"]::before {
+    content: '\f007'; /* Font Awesome user icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+    color: #666;
+    font-size: 20px;
+  }
+  
+  /* Add error handling for failed image loads */
+  .profile-photo[src*="error"] {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-photo[src*="error"]::before {
+    content: '\f007'; /* Font Awesome user icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+    color: #666;
+    font-size: 20px;
+  }
+  
+  #logoutBtn {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border-top: 1px solid #f0f0f0;
+    margin-top: auto;
+  }
+  
+  /* Edit Screen Styles */
+  .edit-screen-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: white;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    padding: 0;
+    margin-right: 15px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  
+  .header-title {
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .edit-screen {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+  }
+  
+  .edit-field-group {
+    flex: 1;
+    padding: 15px 20px;
+    overflow-y: auto;
+  }
+  
+  .edit-field-group label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  .edit-field-group input,
+  .edit-field-group textarea {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    color: #000;
+    background: transparent;
+    box-sizing: border-box;
+  }
+  
+  .edit-field-group input:focus,
+  .edit-field-group textarea:focus {
+    outline: none;
+    border-bottom-color: #000;
+  }
+  
+  .edit-field-group input::placeholder,
+  .edit-field-group textarea::placeholder {
+    color: #999;
+  }
+  
+  .edit-field-group textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    resize: vertical;
+    margin-top: 8px;
+  }
+  
+  .edit-field-group textarea:focus {
+    outline: none;
+    border-color: #000;
+  }
+  
+  /* --- Character Count --- */
+  .char-count {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    margin-top: 4px;
+  }
+  
+  /* --- Interest Tags --- */
+  .interests-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .interest-tag {
+    background: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #333;
+  }
+  
+  /* --- Edit Form Containers --- */
+  #editUsernameForm,
+  #editNameForm,
+  #editPhoneForm,
+  #editAddressForm,
+  #editBioForm,
+  #editInterestsForm,
+  #editAspirationsForm {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 60px; /* Space for the save button */
+  }
+  
+  .edit-field-group {
+    flex: 1;
+    padding: 15px 20px;
+    overflow-y: auto;
+  }
+  
+  /* --- Save Button --- */
+  .save-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: #000000;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    z-index: 10;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .save-btn:hover {
+    background-color: #000000;
+  }
+  
+  .save-btn:disabled {
+    background-color: #e5e7eb;
+    cursor: not-allowed;
+  }
+  
+  /* --- Disabled Input State --- */
+  input:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* --- Field Note --- */
+  .field-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+  }
+
+    /* --- Address List --- */
+  .addresses-list {
+    padding: 20px 0;
+  }
+  
+  /* --- Address Item --- */
+  .address-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: white;
+  }
+  
+  /* --- Address Details --- */
+  .address-details {
+    flex: 1;
+    padding-right: 15px;
+  }
+  
+  .address-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  .address-line {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+  
+  .address-phone {
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0;
+  }
+  
+  .address-type {
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 8px;
+    border: 1px solid #000;
+    text-transform: uppercase;
+  }
+  
+  .address-menu-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    padding: 0;
+    cursor: pointer;
+    width: 24px;
+    text-align: center;
+  }
+  
+  .add-address-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: white;
+    color: #000;
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Address Form Styles */
+  #addressForm {
+    padding-bottom: 60px;
+  }
+  
+  .edit-field-group {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .edit-field-group label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  
+  .edit-field-group input {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    color: #000;
+    padding: 0;
+  }
+  
+  .edit-field-group input::placeholder {
+    color: #999;
+  }
+  
+  .edit-field-group input:focus {
+    outline: none;
+  }
+  
+  /* --- Address Options Menu --- */
+  .address-options-menu {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  
+  .address-options-menu button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .address-options-menu button:hover {
+    background: #f8f8f8;
+  }
+  
+  .address-options-menu .delete-option {
+    color: #000000;
+  }
+  
+  .address-item {
+    position: relative;
+  }
+  
+  /* --- Loading Indicators --- */
+  .fa-spinner {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* --- File Input Styling --- */
+  input[type="file"] {
+    display: none;
+  }
+  
+  /* --- Loading Overlay --- */
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  /* --- Form Validation --- */
+  .edit-field-group input:invalid {
+    border-color: #000000;
+  }
+  
+  .edit-field-group input:invalid + .field-note {
+    color: #000000;
+  }
+  
+  /* --- Address Form Specific Styles --- */
+  #editAddressForm .edit-field-group {
+    margin-bottom: 15px;
+  }
+  
+  #editAddressForm .edit-field-group:last-of-type {
+    margin-bottom: 60px; /* Space for fixed save button */
+  }
+  
+  /* --- Phone Form Specific Styles --- */
+  #editPhoneForm .field-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+  }
+  
+  /* --- Profile Completion --- */
+  .profile-completion {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: white;
+  }
+  
+  /* --- Completion Bar --- */
+  .completion-bar {
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    margin: 8px 0;
+    overflow: hidden;
+  }
+  
+  .completion-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #000000, #c9c9c9);
+    transition: width 0.3s ease;
+  }
+  
+  .completion-text {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  /* --- Completion Tips --- */
+  .completion-tips {
+    padding: 15px 20px;
+    background: #fff5f8;
+    margin: 15px 0;
+  }
+  
+  .completion-tips h4 {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .completion-tips ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .completion-tips li {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .completion-tips li::before {
+    content: '•';
+    color: #000000;
+    position: absolute;
+    left: 8px;
+  }
+  
+  /* --- Validation Styles --- */
+  .validation-message {
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+  }
+  
+  .validation-message.invalid {
+    color: #dc3545;
+  }
+  
+  .validation-message.valid {
+    color: #28a745;
+  }
+  
+  .edit-field-group input.invalid {
+    border-color: #dc3545;
+  }
+  
+  .edit-field-group input.valid {
+    border-color: #28a745;
+  }
+  
+  /* Disabled button style */
+  .save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* --- Validation States --- */
+  .validation-message.invalid {
+    color: #dc3545;
+  }
+  
+  .validation-message.valid {
+    color: #28a745;
+  }
+  
+  .edit-field-group input.invalid {
+    border-color: #dc3545;
+  }
+  
+  .edit-field-group input.valid {
+    border-color: #28a745;
+  }
+  
+  /* --- Disabled Button --- */
+  .save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .profile-photo-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 0;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  .photo-upload-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .profile-photo-container:hover .photo-upload-overlay {
+    opacity: 1;
+  }
+
+  .upload-label {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8em;
+  }
+
+  .upload-label i {
+    font-size: 1.2em;
+    margin-bottom: 4px;
+  }
+
+  
+  .profile-actions {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid rgba(229, 231, 235, 0.5);
+  }
+  
+  .profile-action-btn {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  #logoutBtn {
+    background-color: #000000;
+    border: none;
+    color: white;
+  }
+  
+  #logoutBtn:hover {
+    background-color: #000000;
+  }
+  
+  #logoutBtn::before {
+    content: '\f2f5';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+
+  .edit-profile-form {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+  }
+
+  .edit-field-group {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .edit-field-group label {
+    display: block;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .edit-field-group input,
+  .edit-field-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #374151;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .edit-field-group input:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+  }
+
+  .edit-field-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .edit-field-group input:focus,
+  .edit-field-group textarea:focus {
+    outline: none;
+    border-color: #FF0080;
+    box-shadow: 0 0 0 2px rgba(255, 0, 128, 0.1);
+  }
+
+  .edit-field-group .field-note {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    position: relative;
+  }
+
+  .form-actions button {
+    flex: 1;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .cancel-btn {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+  }
+
+  .cancel-btn:hover {
+    background-color: #f3f4f6;
+  }
+
+  .save-btn {
+    background-color: #FF0080;
+    border: none;
+    color: white;
+  }
+
+  .save-btn:hover {
+    background-color: #e5006f;
+  }
+
+  .save-btn:disabled {
+    background-color: #e5e7eb;
+    cursor: not-allowed;
+  }
+  
+
+  .settings-button.primary:hover {
+    background: #e5006f;
+  }
+
+  .settings-button.secondary:hover {
+    background: #f3f4f6;
+  }
+
+  .settings-button::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+  }
+
+  .settings-button.secondary::before {
+    content: '\f0e2'; /* Reset icon */
+  }
+
+  .settings-button.primary::before {
+    content: '\f0c7'; /* Save icon */
+  }
+
+  .edit-field-group {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  
+  .edit-field-group label {
+    display: block;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .edit-field-group input,
+  .edit-field-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #374151;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .edit-field-group input:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+  }
+  
+  .edit-field-group textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .edit-field-group input:focus,
+  .edit-field-group textarea:focus {
+    outline: none;
+    border-color: #FF0080;
+    box-shadow: 0 0 0 2px rgba(255, 0, 128, 0.1);
+  }
+  
+  .edit-field-group .field-note {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+  }
+  
+  .save-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: #FF0080;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .save-btn:hover {
+    background-color: #e5006f;
+  }
+  
+  .save-btn:disabled {
+    background-color: #e5e7eb;
+    cursor: not-allowed;
+  }

@@ -1,0 +1,30 @@
+# Firebase
+serviceAccountKey.json
+.env
+.venv/
+venv/
+*firebase-adminsdk*.json
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db 
+
+# API Keys and sensitive files
+update_event_images.py
+public-memento-markers/update-images_publicMementoMarkers.py
+.env

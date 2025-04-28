@@ -1,0 +1,83 @@
+/* ========== ARCHIVE CONTAINER STYLES ========== */
+
+.archive-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  position: absolute;
+  top: 125px;
+  left: 0px;
+  right: 0px;
+  bottom: 75px;
+  background: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 900;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+  .archive-container.hidden {
+    display: none;
+  }
+
+  .archive-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  .archive-content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .archive-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+
+  .archive-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .archive-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .archive-container .archive-header {
+    border-bottom: 1px solid #f0f0f0;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .archive-container .archive-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .archive-container .archive-header h2::before {
+    content: none !important;  /* Remove any inherited icon */
+  }
+
+  .archive-container .archive-header h2 i {
+    color: #000000;
+  }
+
+  .archive-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+  }

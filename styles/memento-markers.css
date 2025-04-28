@@ -1,0 +1,238 @@
+/* Memento Marker Styles */
+
+/* Common styles for all markers */
+.user-memento-marker,
+.public-memento-marker,
+.all-user-memento-marker {
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  border-bottom: 10px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+}
+/* Out of radius styles */
+.all-user-memento-marker.out-of-radius,
+.public-memento-marker.out-of-radius,
+.user-memento-marker.out-of-radius {
+  width: 37.5px;
+  height: 37.5px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 5px;
+  opacity: 0.50;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+
+/* Add triangle pointer */
+.user-memento-marker::after,
+.public-memento-marker::after,
+.all-user-memento-marker::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ffffff;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
+}
+
+.out-of-radius::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ffffff;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
+}
+ 
+
+/* Zoom level based sizes */
+.user-memento-marker.zoom-level-0,
+.public-memento-marker.zoom-level-0,
+.all-user-memento-marker.zoom-level-0 {
+  width: 10px;
+  height: 10px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 2px;
+}
+
+.zoom-level-0::after {
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  bottom: -2px;
+}
+
+.user-memento-marker.zoom-level-1,
+.public-memento-marker.zoom-level-1,
+.all-user-memento-marker.zoom-level-1 {
+  width: 20px;
+  height: 20px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 5px;
+}
+
+.zoom-level-1::after {
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-top-width: 5px;
+  bottom: -10px;
+}
+
+.user-memento-marker.zoom-level-2,
+.public-memento-marker.zoom-level-2,
+.all-user-memento-marker.zoom-level-2 {
+  width: 30px;
+  height: 30px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 5px;
+}
+
+.zoom-level-2::after {
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-top-width: 5px;
+  bottom: -10px;
+}
+
+/* Highlight styles */
+.highlighted-marker {
+  box-shadow: 0 0 0 3px #FF0080, 0 4px 8px rgba(0,0,0,0.2);
+  transform: rotate(-2deg) scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.highlighted-marker::after {
+  transform: translateX(-50%) rotate(-2deg) scale(1.05);
+}
+
+
+/* Common popup styles */
+.user-memento-popup,
+.public-memento-popup,
+.all-user-memento-popup {
+  max-width: 300px;
+}
+
+.user-memento-popup-content,
+.public-memento-popup-content,
+.all-user-memento-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.user-memento-popup-media,
+.public-memento-popup-media,
+.all-user-memento-popup-media {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.user-memento-popup-media img,
+.public-memento-popup-media img,
+.all-user-memento-popup-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-memento-popup-details,
+.public-memento-popup-details,
+.all-user-memento-popup-details {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.user-memento-popup-details h3,
+.public-memento-popup-details h3,
+.all-user-memento-popup-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #111827;
+}
+
+.user-memento-popup-details p,
+.public-memento-popup-details p,
+.all-user-memento-popup-details p {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-memento-popup-details i,
+.public-memento-popup-details i,
+.all-user-memento-popup-details i {
+  color: #FF0080;
+}
+
+/* Tags styles */
+.user-memento-popup-tags,
+.public-memento-popup-tags,
+.all-user-memento-popup-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.user-memento-popup-tags .tag,
+.public-memento-popup-tags .tag,
+.all-user-memento-popup-tags .tag {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Cluster count label styles */
+.cluster-count-label {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  text-align: center;
+  min-width: 20px;
+  line-height: 1.2;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 500;
+}

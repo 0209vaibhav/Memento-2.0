@@ -1,0 +1,44 @@
+{
+  "rules": {
+    // Default deny all access
+    ".read": false,
+    ".write": false,
+
+    "users": {
+      ".indexOn": ["displayName", "email"],
+      "$uid": {
+        // Allow users to read and write only their own data
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        
+        "profile": {
+          ".validate": "newData.hasChildren(['displayName', 'email'])",
+          ".indexOn": ["createdAt", "updatedAt"]
+        },
+        
+        "settings": {
+          ".validate": "newData.hasChildren(['theme', 'notifications'])"
+        }
+      }
+    },
+
+    "activities": {
+      ".read": "auth != null",  // All authenticated users can read activities
+      ".indexOn": ["userId", "category", "createdAt", "status"],
+      "$activityId": {
+        ".write": "auth != null && (!data.exists() || data.child('userId').val() === auth.uid)",
+        ".validate": "newData.hasChildren(['name', 'caption', 'category', 'userId'])",
+        "userId": {
+          ".validate": "newData.val() === auth.uid"  // Ensure userId matches the authenticated user
+        }
+      }
+    },
+
+    "public": {
+      // Public data that anyone can read but only authenticated users can write
+      ".read": true,
+      ".write": "auth != null",
+      ".indexOn": ["type", "createdAt"]
+    }
+  }
+} 

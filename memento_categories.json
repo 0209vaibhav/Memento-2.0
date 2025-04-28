@@ -1,0 +1,102 @@
+[
+  {
+    "id": "architecture",
+    "name": "Architecture",
+    "symbol": "🏛️"
+  },
+  {
+    "id": "urban-nature",
+    "name": "Urban Nature",
+    "symbol": "🌿"
+  },
+  {
+    "id": "sky-weather",
+    "name": "Sky & Weather",
+    "symbol": "🌈"
+  },
+  {
+    "id": "cultural",
+    "name": "Cultural Spotlight",
+    "symbol": "🎭"
+  },
+  {
+    "id": "mood-music",
+    "name": "Mood & Music",
+    "symbol": "🎧"
+  },
+  {
+    "id": "creature",
+    "name": "Creature Sighting",
+    "symbol": "🐾"
+  },
+  {
+    "id": "street-food",
+    "name": "Street Food",
+    "symbol": "🍴"
+  },
+  {
+    "id": "social",
+    "name": "Social Gathering",
+    "symbol": "👥"
+  },
+  {
+    "id": "sport",
+    "name": "Sport in Action",
+    "symbol": "⚽"
+  },
+  {
+    "id": "poetic",
+    "name": "Poetic Reflection",
+    "symbol": "✍️"
+  },
+  {
+    "id": "folklore",
+    "name": "Urban Folklore",
+    "symbol": "💡"
+  },
+  {
+    "id": "transition",
+    "name": "City in Transition",
+    "symbol": "🏗️"
+  },
+  {
+    "id": "unpleasant",
+    "name": "Unpleasant Spot",
+    "symbol": "⚠️"
+  },
+  {
+    "id": "public-event",
+    "name": "Public Event",
+    "symbol": "👥"
+  },
+  {
+    "id": "popup-culture",
+    "name": "Pop-Up Culture",
+    "symbol": "🛍️"
+  },
+  {
+    "id": "playful",
+    "name": "Play & Participation",
+    "symbol": "🎮"
+  },
+  {
+    "id": "learning",
+    "name": "City Learning",
+    "symbol": "🎓"
+  },
+  {
+    "id": "tranquil",
+    "name": "Tranquil Corners",
+    "symbol": "🕊️"
+  },
+  {
+    "id": "experimental",
+    "name": "Experimental Urbanism",
+    "symbol": "🧪"
+  },
+  {
+    "id": "other",
+    "name": "Other",
+    "symbol": "🗂️"
+  }
+]
