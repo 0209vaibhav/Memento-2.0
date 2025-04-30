@@ -385,9 +385,9 @@
     display: block;
     text-align: center;
     line-height: 1.2;
-    font-size: 0.8em;
     width: 100%;
     color: hsl(0, 0%, 90%);
+    font-family: 'Ink Free', cursive;
   }
   
 
