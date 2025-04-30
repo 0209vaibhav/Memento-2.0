@@ -419,21 +419,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (radiusSlider && radiusValue) {
     const debouncedUpdate = debounce((value) => {
       if (radiusToggle && radiusToggle.checked) {
-        if (userLocation) {
+          if (userLocation) {
           updateRadiusCircle(userLocation, parseFloat(value));
-        } else if (map) {
-          const center = map.getCenter().toArray();
+          } else if (map) {
+              const center = map.getCenter().toArray();
           updateRadiusCircle(center, parseFloat(value));
         }
-      }
-      updateMap();
+          }
+          updateMap();
     }, 100); // 100ms debounce
 
     radiusSlider.addEventListener("input", function () {
       const formattedValue = Number(this.value).toFixed(2);
       radiusValue.innerText = formattedValue + ' mi';
       debouncedUpdate(formattedValue);
-    });
+      });
   }
 
   // ---------------------------
@@ -2108,26 +2108,26 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       
-      mediaPreview.innerHTML = '';
-      
-      uploadedFiles.forEach((file, index) => {
-        const reader = new FileReader();
+        mediaPreview.innerHTML = '';
         
-        reader.onload = (e) => {
-          const previewItem = document.createElement('div');
-          previewItem.className = 'media-preview-item';
-          
-          if (file.type.startsWith('image/')) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
+        uploadedFiles.forEach((file, index) => {
+            const reader = new FileReader();
+        
+            reader.onload = (e) => {
+            const previewItem = document.createElement('div');
+            previewItem.className = 'media-preview-item';
+            
+            if (file.type.startsWith('image/')) {
+              const img = document.createElement('img');
+              img.src = e.target.result;
             img.alt = 'Memento media';
-            previewItem.appendChild(img);
-          } else if (file.type.startsWith('video/')) {
-            const video = document.createElement('video');
-            video.src = e.target.result;
-            video.controls = true;
-            previewItem.appendChild(video);
-          }
+              previewItem.appendChild(img);
+            } else if (file.type.startsWith('video/')) {
+              const video = document.createElement('video');
+              video.src = e.target.result;
+              video.controls = true;
+              previewItem.appendChild(video);
+            }
           
           // Add remove button
           const removeButton = document.createElement('button');
@@ -2148,16 +2148,16 @@ document.addEventListener("DOMContentLoaded", function () {
           };
           
           previewItem.appendChild(removeButton);
-          mediaPreview.appendChild(previewItem);
-        };
+                mediaPreview.appendChild(previewItem);
+            };
         
         reader.onerror = (error) => {
           console.error('Error reading file:', error);
           showToast('Error reading file', 'error');
         };
         
-        reader.readAsDataURL(file);
-      });
+            reader.readAsDataURL(file);
+        });
       
       // Update the hint text
       const mediaHint = document.querySelector('.media-hint');
@@ -2923,7 +2923,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (map) {
           const center = map.getCenter().toArray();
           updateRadiusCircle(center, parseFloat(value));
-        }
+      }
       }
       updateMarkersRadius();
       updateMap();
@@ -2936,9 +2936,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ---------------------------
-  // 29) UI helper functions
-  // ---------------------------
+// ---------------------------
+// 29) UI helper functions
+// ---------------------------
   // Add this function to handle toast notifications
   function showToast(message, type = 'success') {
     // Check if splash screen is still visible
@@ -3865,7 +3865,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const radiusToggle = document.getElementById('radius-toggle');
     const radiusSlider = document.getElementById('radius-slider');
-    
+              
     if (!radiusToggle || !radiusSlider) {
       console.log('Radius controls not found');
       return;

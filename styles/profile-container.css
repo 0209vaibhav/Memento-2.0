@@ -9,7 +9,7 @@
   
   /* --- Profile Header --- */
   .profile-header {
-    font-family: Arial, sans-serif;
+    font-family: 'Ink Free', cursive;
     color: #333333;
     list-style: none;
     position: relative;
@@ -86,7 +86,7 @@
   
   .chevron-btn::before {
     content: '\f044';
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Ink Free', cursive;
     font-weight: 400;
   }
   

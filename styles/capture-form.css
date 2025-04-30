@@ -484,6 +484,7 @@
 
 .step-navigation button {
     transition: all 0.3s ease;
+    font-family: 'Ink Free', cursive;
 }
 
 .step-navigation button:disabled {
@@ -548,6 +549,7 @@
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     font-size: 14px;
+    font-family: 'Ink Free', cursive;
     background-color: white;
     cursor: pointer;
     appearance: none;
@@ -694,8 +696,8 @@
 
 /* --- Memento Preview Container --- */
 .memento-preview-container {
-    margin-top: 20px;
-    padding: 15px;
+    margin-top: 0px;
+    padding: 0px;
     background: white;
 }
 
@@ -1040,4 +1042,17 @@
 
 .form-step[data-step="5"] #cancel-memento-btn:hover {
     background-color: #e0e0e0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="datetime-local"],
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Ink Free', cursive;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
 }
