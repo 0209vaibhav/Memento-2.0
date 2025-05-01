@@ -32,6 +32,9 @@ Thumbs.db
 *.txt
 *.tmp
 *.temp
+*.bak
+*.old
+*~
 
 # API Keys and sensitive files
 .env
@@ -41,3 +44,8 @@ public-memento-markers/update-images_publicMementoMarkers.py
 # Development files
 firebase-setup.txt
 event_list_lines.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
