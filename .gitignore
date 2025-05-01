@@ -1,12 +1,16 @@
-# Firebase
-serviceAccountKey.json
-.env
-.venv/
+# Virtual environments
 venv/
-*firebase-adminsdk*.json
+.venv/
+.env/
 
 # Dependencies
 node_modules/
+package-lock.json
+
+# Firebase
+.firebase/
+serviceAccountKey.json
+*firebase-adminsdk*.json
 
 # Build
 dist/
@@ -22,9 +26,18 @@ npm-debug.log*
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Temporary files
+*.txt
+*.tmp
+*.temp
 
 # API Keys and sensitive files
+.env
 update_event_images.py
 public-memento-markers/update-images_publicMementoMarkers.py
-.env
+
+# Development files
+firebase-setup.txt
+event_list_lines.txt

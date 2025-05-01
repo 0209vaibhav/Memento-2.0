@@ -2,101 +2,185 @@
   {
     "id": "ephemeral",
     "name": "Ephemeral",
-    "symbol": "🌀"
+    "symbol": "🌀",
+    "keywords": [
+      "ephemeral",
+      "temporary",
+      "momentary",
+      "short-lived"
+    ]
   },
   {
     "id": "unmapped",
     "name": "Unmapped",
-    "symbol": "📍"
+    "symbol": "📍",
+    "keywords": [
+      "unknown",
+      "hidden",
+      "undiscovered"
+    ]
   },
   {
     "id": "niche",
     "name": "Niche/Cult",
-    "symbol": "🧬"
+    "symbol": "🧬",
+    "keywords": [
+      "niche",
+      "underground",
+      "cult"
+    ]
   },
   {
     "id": "emotional",
     "name": "Emotionally Charged",
-    "symbol": "💫"
+    "symbol": "💫",
+    "keywords": [
+      "emotional",
+      "sentimental",
+      "feeling",
+      "touching"
+    ]
   },
   {
     "id": "hidden",
     "name": "Hidden Gem",
-    "symbol": "🕵️"
+    "symbol": "🕵️",
+    "keywords": [
+      "hidden",
+      "secret",
+      "underground",
+      "unexpected"
+    ]
   },
   {
     "id": "unexpected",
     "name": "Unexpected Encounter",
-    "symbol": "🎭"
+    "symbol": "🎭",
+    "keywords": [
+      "unexpected",
+      "surprise",
+      "random",
+      "serendipity"
+    ]
   },
   {
     "id": "reflective",
     "name": "Reflective",
-    "symbol": "🪞"
+    "symbol": "🪞",
+    "keywords": [
+      "reflective",
+      "poetic",
+      "philosophical"
+    ]
   },
   {
     "id": "unpleasant",
     "name": "Unpleasant Truth",
-    "symbol": "💔"
+    "symbol": "💔",
+    "keywords": [
+      "unpleasant",
+      "truth",
+      "harsh",
+      "sad"
+    ]
   },
   {
     "id": "rare",
     "name": "Once-in-a-While",
-    "symbol": "⏳"
+    "symbol": "⏳",
+    "keywords": [
+      "rare",
+      "once-in-a-while",
+      "infrequent"
+    ]
   },
   {
     "id": "recurring",
     "name": "Recurring Ritual",
-    "symbol": "🔄"
+    "symbol": "🔄",
+    "keywords": []
   },
   {
     "id": "local",
     "name": "Local Flavor",
-    "symbol": "🧃"
+    "symbol": "🧃",
+    "keywords": []
   },
   {
     "id": "performative",
     "name": "Performative",
-    "symbol": "💃"
+    "symbol": "💃",
+    "keywords": []
   },
   {
     "id": "blink",
     "name": "Blink and You Miss It",
-    "symbol": "👀"
+    "symbol": "👀",
+    "keywords": [
+      "blink and you miss",
+      "quick",
+      "passing",
+      "fleeting",
+      "must-see"
+    ]
   },
   {
     "id": "social-heavy",
     "name": "Highly Social",
-    "symbol": "🧲"
+    "symbol": "🧲",
+    "keywords": []
   },
   {
     "id": "nightlife",
     "name": "Nightlife Pulse",
-    "symbol": "🌃"
+    "symbol": "🌃",
+    "keywords": [
+      "night",
+      "nightlife",
+      "late",
+      "dark",
+      "club"
+    ]
   },
   {
     "id": "touristy",
     "name": "Touristy Yet Fun",
-    "symbol": "🧳"
+    "symbol": "🧳",
+    "keywords": [
+      "tourist",
+      "tour",
+      "explore",
+      "bucket list"
+    ]
   },
   {
     "id": "clean-cut",
     "name": "Over-Polished",
-    "symbol": "🧼"
+    "symbol": "🧼",
+    "keywords": []
   },
   {
     "id": "beginner",
     "name": "First-Time Friendly",
-    "symbol": "🐣"
+    "symbol": "🐣",
+    "keywords": []
   },
   {
     "id": "iconic",
     "name": "Iconic Landmark",
-    "symbol": "🏙️"
+    "symbol": "🏙️",
+    "keywords": [
+      "iconic",
+      "landmark",
+      "skyline",
+      "manhattan",
+      "brooklyn bridge"
+    ]
   },
   {
     "id": "other",
     "name": "Other",
-    "symbol": "🗂️"
+    "symbol": "🗂️",
+    "keywords": []
   }
-]
+] 
